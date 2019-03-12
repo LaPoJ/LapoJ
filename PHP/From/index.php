@@ -15,7 +15,7 @@
 		3.表单元素（表单域--input）必须有 name (如果希望被提交的情况下)
 		4.表单中必须有一个提交按钮
 	 -->
-    <form action="formP.php" method="get">
+    <form action="formP.php" method="post">
         <table border="1" ;>
             <tr>
                 <td>用户名</td>

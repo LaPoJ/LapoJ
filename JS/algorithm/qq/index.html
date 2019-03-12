@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域</title>
+</head>
+<body>
+    <script>
+        var man = null;
+        var name = "占煌";
+        { //会计作用域
+            let supperMan = "蔡建邦";        
+        }
+        // 引用一样不在作用域的变量，会报错
+        console.log(window.supperMan);
+
+    </script>
+</body>
+</html>
