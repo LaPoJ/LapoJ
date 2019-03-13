@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DocumentOperation</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 200px;
+            background-color: hotpink;
+        }
+        #title{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        <p id="titke">title</p>
+    </div> -->
+</body>
+    <script>
+        //元素节点
+        const divNode = document.createElement('div');
+        divNode.className = 'box';
+        const pNode = document.createElement('p');
+        pNode.id = 'title';
+        //文本节点
+        // document.createTextNode('title');
+
+        //将p标签添加到div下
+        divNode.appendChild(pNode);
+        // 给P标签添加内容
+        pNode.appendChild(document.createTextNode('title'));
+        // 将div添加到body下
+        document.body.append(divNode);
+
+
+    </script>
+</html>

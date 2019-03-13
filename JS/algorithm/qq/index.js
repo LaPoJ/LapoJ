@@ -19,8 +19,6 @@ while(head < tail)
 // enc_qq.shift();
 console.log(qq);
 
-console.log()
-
 // API
 // 第一个数移除
 // qq.push(enc_qq[0]);
