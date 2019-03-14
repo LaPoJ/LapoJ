@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>外卖熊</title>
+    <link rel="stylesheet" href="./bear.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <div class="view proload">
+        <div class="logo-logo-c">
+            <div class="ride1-c">
+                <div class="ride"></div>
+            </div>
+            <div class="process-c">
+                <div class="process-v"></div>
+            </div>
+            <div class="process-txt"></div>
+        </div>
+        <div id="next">
+            下一屏
+        </div>
+    </div>
+    <div class="view index">
+        第二屏
+    </div>
+    <script>
+        $(document).ready(function(){
+            let width = 10;
+            let interval = setInterval(() => {
+            width += 1;
+            widtht = width + '%';
+            $(".process-v").css("width",widtht);
+            if(width >= 100) {
+                clearInterval(interval);
+                $(".view.proload").slideUp(300);
+            }
+            }, 10);
+
+            // $("#next").click(function(){
+            //     $(".view.proload").slideUp(300);
+            // })
+        })
+    </script>
+</body>
+</html>
