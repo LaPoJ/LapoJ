@@ -40,6 +40,7 @@ console.log(player2.name + "上线了");
 player1.enemy = player2;
 player2.enemy = player1;
 console.log(player1.enemy);
+console.log(player2.enemy);
 
 //游戏的过程
 player1.win();
