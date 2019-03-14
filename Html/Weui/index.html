@@ -97,17 +97,11 @@
         })
     }
 
-    // function payWays(payWay) { 
-    //   // var priceWays = document.querySelectorAll('.price-way');
-    //   payWay.style.backgroundColor = 'blue';
-
-    // }
     var oPays = document.querySelectorAll('.weui-cell');
     console.log(oPays);
     var priceWays = document.querySelectorAll('.price-way');
     console.log(priceWays);
     for (let j = 0; j < oPays.length; j++) {
-      // console.log(1);  
       oPays[j].addEventListener('click',
         function () {
           for (let oPay of oPays) {
