@@ -21,7 +21,7 @@
               <div class="item-price">
                 <p class="item-price__month">1个月</p>
                 <p class="item-price__old">原价19.9元</p>
-                <p class="item-price__new">现价15.9元</p>
+                <p class="item-price__new">现价9元</p>
               </div>
             </div>
           </div>
@@ -46,20 +46,101 @@
         </div>
       </div>
     </div>
+    <div class="page__ct">
+      <div class="wrapper">
+        <a class="weui-cell weui-cell_access bottom-border" href="javascript:;">
+          <!-- :void(0);" onclick="payWays(this) -->
+          <div class="weui-cell__hd">
+            <img src="./candy.png">
+          </div>
+          <div class="weui-cell__bd weui-cell_primary">
+            <p>糖果支付</p>
+            <p>dasda</p>
+          </div>
+          <span class="price-way"></span>
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+          <div class="weui-cell__hd">
+            <img src="./wechat.png">
+          </div>
+          <div class="weui-cell__bd weui-cell_primary">
+            <p>微信支付</p>
+          </div>
+          <span class="price-way"></span>
+        </a>
+      </div>
+    </div>
+    <div class="page__bd">
+      <a href="javascript:;" class="weui-btn weui-btn_pay" id="pay">去支付</a>
+    </div>
+    <!— dialog —>
+    <div class="js_dialog" id="iosDialog2">
+      <div class="weui-mask"></div>
+      <div class="weui-dialog">
+        <div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>
+        <div class="weui-dialog__ft">
+          <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="close">知道了</a>
+        </div>
+      </div>
+    </div>
   </div>
   <script>
     var oTypes = document.querySelectorAll('.item-price');
     // console.log(oType);
     for (let i = 0; i < oTypes.length; i++) {
-
       oTypes[i].addEventListener('click',
-        function(){
+        function () {
           for (let oType of oTypes) {
-            oType.classList.remove('active');         
+            oType.classList.remove('active');
           }
           this.classList.add('active');
-      })      
+        })
     }
+
+    // function payWays(payWay) { 
+    //   // var priceWays = document.querySelectorAll('.price-way');
+    //   payWay.style.backgroundColor = 'blue';
+
+    // }
+    var oPays = document.querySelectorAll('.weui-cell');
+    console.log(oPays);
+    var priceWays = document.querySelectorAll('.price-way');
+    console.log(priceWays);
+    for (let j = 0; j < oPays.length; j++) {
+      // console.log(1);  
+      oPays[j].addEventListener('click',
+        function () {
+          for (let oPay of oPays) {
+            if (j < 1) {
+              priceWays[j + 1].style.backgroundColor = "transparent";
+              priceWays[j].style.backgroundColor = "blue";
+            } else {
+              priceWays[j - 1].style.backgroundColor = "transparent";
+              priceWays[j].style.backgroundColor = "blue";
+            }
+
+          }
+        }
+      )
+    }
+
+    var goPay = document.getElementById('pay');
+    var dialog = document.getElementById('iosDialog2');
+    goPay.addEventListener('click',
+      function () {
+        dialog.style.display = 'block';
+        dialog.style.opacity = 0.95;
+      }
+    )
+
+    var closeDia = document.getElementById('close');
+    closeDia.addEventListener('click',
+      function () {
+        dialog.style.display = 'none';
+        dialog.style.opacity = 0;
+      }
+    )
+
   </script>
 </body>
 
