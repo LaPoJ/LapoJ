@@ -98,26 +98,45 @@
     }
 
     var oPays = document.querySelectorAll('.weui-cell');
-    console.log(oPays);
     var priceWays = document.querySelectorAll('.price-way');
-    console.log(priceWays);
+    
+    // 点击小圆点进行选择
+    // if (j < 1) {
+            //   priceWays[j + 1].style.backgroundColor = "transparent";
+            //   priceWays[j].style.backgroundColor = "blue";
+            // } else {
+            //   priceWays[j - 1].style.backgroundColor = "transparent";
+            //   priceWays[j].style.backgroundColor = "blue";
+            // }
+    for (let i = 0; i < priceWays.length; i++) {
+      priceWays[i].addEventListener('click',
+        function () {
+          for (let priceWay of priceWays) {
+            priceWay.classList.remove('is_choose');
+          }
+          this.classList.add('is_choose');
+        })
+    }
+
+    // a标签进行处理
     for (let j = 0; j < oPays.length; j++) {
       oPays[j].addEventListener('click',
         function () {
           for (let oPay of oPays) {
-            if (j < 1) {
-              priceWays[j + 1].style.backgroundColor = "transparent";
-              priceWays[j].style.backgroundColor = "blue";
-            } else {
-              priceWays[j - 1].style.backgroundColor = "transparent";
-              priceWays[j].style.backgroundColor = "blue";
+            if (j<1) {
+              priceWays[j].classList.add('is_choose');
+              priceWays[j+1].classList.remove('is_choose');  
+              priceWays[j].classList.add     
             }
-
-          }
-        }
-      )
+            else{
+              priceWays[j].classList.add('is_choose');
+              priceWays[j-1].classList.remove('is_choose');            
+            }
+          }           
+      })
     }
 
+    // 支付弹窗通知
     var goPay = document.getElementById('pay');
     var dialog = document.getElementById('iosDialog2');
     goPay.addEventListener('click',
@@ -127,6 +146,7 @@
       }
     )
 
+    // 关闭弹窗通知
     var closeDia = document.getElementById('close');
     closeDia.addEventListener('click',
       function () {
@@ -134,7 +154,6 @@
         dialog.style.opacity = 0;
       }
     )
-
   </script>
 </body>
 
