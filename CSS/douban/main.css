@@ -1,0 +1,60 @@
+*{
+  /* 清楚所有元素按下去浏览器默认的样式 */
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0)
+}
+body{
+  font-family: "Helvetica Nece",Arial, sans-serif;
+  margin: 0;
+  color: #111111;
+  font-size: 12px;
+  position: relative;
+  background: #f6f6f6;
+}
+
+a{
+  text-decoration: none;
+  color: #42bd56;
+}
+.feed-item{
+  display: block; /*行内转块级元素*/
+  padding: 25px 18px 25px 0;
+  position: relative;
+  color: #494949; 
+  margin-left: 18px;
+}
+.cover{
+  position: relative;
+  background: url(./p58951017.jpg) no-repeat ;
+  width: 25.6%;
+  float: right;
+  margin-left: 15px;
+  margin-top: 11.517081%;
+  margin-right: 15px;
+}
+.feed-content{
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.feed-content h3{
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.41;
+  color: #494949;
+  margin-bottom: 6px;
+}
+.feed-content p{
+  color: #aaaaaa;
+  font: 12px;
+  line-height: 1.5;
+  display: -webkit-box;  /* */
+  overflow: hidden;
+  -webkit-line-clamp:3;
+  -webkit-box-orient: vertical;
+}
+.feed-item .author{
+  color: #333333;
+  font-size: 12px;
+}
+/* .name{
+  color: darkgray;
+} */
