@@ -37,17 +37,31 @@
                 </div>
               </div>
               <!-- 脖子 -->
-              <div class="neck">               
+              <div class="neck">
               </div>
               <div class="head">
-                  <div class="part"></div>
-                </div>
+                <div class="part"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="swiper-slide">
-        slide-03
+        <div class="view">
+          <div class="view favourite">
+            <div class="id18_juian j-juanAni2 z-juanAni2">
+            </div>
+            <div class="m-page" style="transform: scale(0.490667);">
+              <div class="lines"></div>
+              <div class="manwrap ">
+                <div class="shoubi"></div>
+                <div class="man"></div>
+                <div class="tou"></div>
+              </div>
+              <div class="notes"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -55,7 +69,21 @@
   <script>
     const musicBtn = document.querySelector('.music-btn');
     const bgm = document.getElementById('bgm');
+
+    const paras = document.querySelector('.paras')
+    const id18_juian = document.querySelector('.id18_juian');
+    setInterval(() => {
+      id18_juian.classList.remove('z-juanAni2');
+      setTimeout(() => {
+        id18_juian.classList.add('z-juanAni2');
+      }, 300)
+
+    }, 3000);
+
     let defaulMusicPlay = true;
+    // if (bgm.play()) {
+    //   bgm.pause();
+    // }
     musicBtn.addEventListener('click',
       () => {
         if (defaulMusicPlay) {
@@ -69,8 +97,8 @@
         musicBtn.classList.toggle('off'); //等于add和remove     
       });
 
-    const swiper = new Swiper('.swiper-container',{
-      direction:'vertical',//滑屏方向
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'vertical', //滑屏方向
 
     })
   </script>
