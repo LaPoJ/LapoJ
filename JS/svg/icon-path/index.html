@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #e9e9e9;
+    }
+
+    body {
+      margin: 0;
+      text-align: center;
+    }
+
+    .grid {
+      width: 750px;
+      height: 500px;
+      /* background: red; */
+      margin: auto;
+      padding-top: 100px;
+      padding-left: 100px;
+      background-image: url(grid.png);
+      position: relative;
+    }
+
+    .grid:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100px;
+      width: 750px;
+      height: 600px;
+      border-left: 1px solid #7c7cea;
+    }
+
+    .grid:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 100px;
+      width: 850px;
+      height: 500px;
+      border-top: 1px solid #7c7cea;
+    }
+
+    svg {
+      stroke: hotpink;
+      stroke-width: 5;
+      /* 线结合处样式 */
+      /* round 圆润 */
+      stroke-linecap: round;
+      /* 两线交叉处 */
+      stroke-linejoin: round;
+      /* 填充 */
+      fill: none;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <!-- 矢量图 -->
+    <svg width="750" height="500">
+      <!-- 定义指令 -->
+      <defs>
+        <!-- 定义角色 -->
+        <!-- gorup -->
+
+        <!-- 目录 -->
+        <g id="leftalign">
+          <line x1="3" y1="3" x2="48" y2="3" />
+          <line x1="3" y1="19" x2="65" y2="19" />
+          <line x1="3" y1="35" x2="48" y2="35" />
+          <line x1="3" y1="51" x2="65" y2="51" />
+        </g>
+
+        <!-- 箭头 -->
+        <g id="rightcreat">
+          <polyline points=" 30 26 3 54 30 79" />
+          <polyline points=" 70 26 97 54 70 79" />
+          <!-- <polygon points="3 3 30 28 3 53"/> -->
+        </g>
+
+        <!-- 比组合更牛逼模板 -->
+        <!-- 声明viewBox:0 0 86 86 -->
+        <symbol id="play" viewBox="0 0 172 86">
+          <ellipse cx="43" cy="43" rx="40" ry="40" />
+          <polygon points="35 23 60 43 35 63" />
+
+          <ellipse cx="129" cy="43" rx="40" ry="40" />
+            <!-- <polygon points="35 23 60 43 35 63" /> -->
+          <line x1="119" y1="24" x2="119" y2="62" />
+          <line x1="142" y1="24" x2="142" y2="62" />
+        </symbol>
+        <symbol id="download" viewBox="0 0 64 71">
+          <path fill="hotpink" stroke="" stroke-width="" d=" 
+              M 18 3
+              L 46 3
+              L 46 40
+              L 61 40
+              L 32 68
+              L 3 40
+              L 18 40
+              Z
+              " />
+          
+        </symbol>
+      </defs>
+      <!-- 前台 -->
+      <use xlink:href="#leftalign" x="0" y="0"></use>
+      <use xlink:href="#rightcreat" x="100" y="0" />
+      <use xlink:href="#download" x="200" y="0" width="100" height="100" />
+      <use xlink:href="#play" x="0" y="100" width="200" height="100" />
+
+    </svg>
+  </div>
+  <div class="hehe"></div>
+</body>
+
+</html>

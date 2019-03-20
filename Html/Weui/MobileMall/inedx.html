@@ -21,11 +21,11 @@
               <div class="page__hd">
               </div>
               <div class="page__bd">
-                  <div class="weui-search-bar" id="searchBar">
+                  <div class="weui-search-bar" id="searchBar" >
                       <form class="weui-search-bar__form">
                           <div class="weui-search-bar__box">
                               <i class="weui-icon-search"></i>
-                              <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                              <input type="search"  class="weui-search-bar__input" onBlur="removeSe()"  id="searchInput" placeholder="搜索">
                               <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
                           </div>
                           <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px; opacity: 1; transform: scale(1, 1);">
@@ -84,6 +84,7 @@
           </div>
           <!-- 个人资料 -->
           <div class="weui-tab__panel tab">
+            我的
             <div class="page badge js_show">
               <!-- <div class="page__hd">
                 <h1 class="page__title">Badge</h1>
@@ -179,27 +180,25 @@
       }
     }
 
+    // 搜索框
+    const searchTag = document.querySelector('.weui-search-bar');
+
     // 点击搜索
-    document.querySelector('.weui-search-bar').addEventListener('click',
-      function () {
+      searchTag.addEventListener('click',
+      function (){
         this.classList.add('weui-search-bar_focusing');
       }
     )
-
-    function removeSearch() {
-      const searchTag = document.querySelector('.weui-search-bar');
-      console.log(searchTag);
+    // 点击取消搜索
+    function removeSearch(){      
       searchTag.classList.remove('weui-search-bar_focusing');
     }
-    // 取消搜索
-    // const searchTag = document.querySelector('.weui-search-bar');
-    // document.querySelector('#searchCancel').addEventListener('click',
-    //   function () {
-    //     searchTag.classList.remove('weui-search-bar_focusing');
-    //   }
-    // )
-
-    
+    // 失去聚焦取消搜索
+    function removeSe(){
+      console.log(1);
+      
+      searchTag.classList.remove('weui-search-bar_focusing');
+    }
   </script>
 </body>
 

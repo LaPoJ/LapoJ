@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animation Fill Mode</title>
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    .box{
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      animation: long 2s ;
+
+      /* forwards：动画停在最后一帧 */
+      /* animation-fill-mode: forwards; */
+      /* backwards：动画开始前，元素的样式设为动画开始的第一帧 */
+      /* animation-fill-mode: backwards; */
+      /* both：是backwards和forwards的结合 */
+      animation-fill-mode: both;
+    }
+    @keyframes long{
+      0%{
+        width: 100px;
+      }
+      100%{
+        width: 600px;
+      }
+    }
+    .box2{
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="box2"></div>
+  </div>
+</body>
+</html>
