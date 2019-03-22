@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./peppa-pig.css">
+  <title>Peppa Pig</title>
+  <style>
+    /* *{
+        margin:0;
+        padding:0
+    } */
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <svg width="750" height="500" view-box="750 500">
+      <!-- 小猪佩奇 -->
+      <defs>
+          <!--  -->
+        <g id="nose" transform="rotate(-50 50 50)" >
+            <ellipse class="nose-circle" cx="50" cy="50" rx="35" ry="20"  />
+        </g>
+        <g id="nose-poi">
+            <ellipse class="nose-point" cx="40" cy="50" rx="3" ry="3" />
+            <ellipse class="nose-point" cx="60" cy="50" rx="3" ry="3" />
+        </g>
+        <g id="nose-bot">
+          <path d="
+              M 25 75
+              A 150 150 0 0 0 100 140
+              "/>
+        </g>
+        <g id="nose-top">
+            <path d="
+            M 70 20.5
+            A 150 90 15 0 1 220 70
+            "/>
+        </g>
+        <!-- <g id="face"> -->
+        <clipPath id="face-right">
+          <rect class="face-right_rect" x="105" y="68" width="500" height="73" />
+        </clipPath>
+
+            <!-- <ellipse cx="50" cy="50" rx="80" ry="80" /> -->
+        <!-- </g> -->
+      </defs>
+      <use xlink:href="#nose" x="0" y="0" width="100" height="100"></use>
+      <use xlink:href="#nose-poi" x="0" y="0" width="100" height="100"></use>
+      <use xlink:href="#nose-bot" x="0" y="0" width="100" height="100"/>
+      <use xlink:href="#nose-top" x="0" y="0" width="100" height="100"/>
+      <!-- <use xlink:href="#face" x="120" y="82" width="100" height="100"/> -->
+      <circle cx="160" cy="150" r="100" clip-path="url(#face-right)">
+      
+
+    </svg>
+    <!-- <svg width="320px" height="320px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 315
+               L 110 215
+               A 30 50 0 0 1 162.55 162.45
+               L 172.55 152.45
+               A 30 50 -45 0 1 215.1 109.9
+               L 315 10" stroke="black" fill="green" stroke-width="2" fill-opacity="0.5"/>
+    </svg> -->
+  </div>
+</body>
+</html>
