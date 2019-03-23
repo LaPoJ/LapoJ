@@ -20,16 +20,19 @@
     opacity: 0;
     visibility: hidden;
     width: 44px;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 /* 鼠标移动 */
 .swiper-container{
     width: 100%;
     height: 28vw;
+    /* swiper-container  */
+    transition: all 10s ease-in-out;
 }
 .swiper-container .loading{
     opacity: 0;
     visibility: hidden;
+    /* transition:  */
 }
 .swiper-container:hover [class ^="swiper-button-"]{
     opacity: 1;
