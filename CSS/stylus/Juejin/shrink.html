@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex 缩小</title>
+  <style>
+    *{
+        margin:0;
+        padding:0
+    }
+    .content{
+      display: flex;
+      width: 500px;
+      height: 500px;
+      background-color: #666666;
+      /* flex-wrap: wrap;  */
+    }
+    .content div{
+      flex-basis: 120px;
+      height: 100px;
+      border: 1px solid rgba(0, 0, 0, 2)
+    }
+    .box{
+      flex-shrink: 1;
+    }
+    .box1{
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="box" style="background-color:red;"></div>
+    <div class="box" style="background-color:yellow;"></div>
+    <div class="box" style="background-color:blue;"></div>
+    <div class="box1" style="background-color:green;"></div>
+    <div class="box1" style="background-color:hotpink;"></div>
+  </div>
+</body>1
+</html>
