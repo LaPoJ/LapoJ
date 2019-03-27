@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+        margin:0;
+        padding:0
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var f = function(){
+      // console.log('function');
+      return 'value';
+    }
+    f();
+    var arrow_f = () => {
+      // console.log('function');
+      return 'value';
+    }
+
+    var arrow_1 = temp => {
+      console.log(temp);
+    }
+    arrow_1('arrow_1');
+
+
+    var arrow_3 = () => ({
+      name:"占煌",
+      age: 18
+    })
+  </script>
+</body>
+</html>
