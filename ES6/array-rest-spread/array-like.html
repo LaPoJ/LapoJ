@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>类数组</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <script>
+
+    const lis = document.querySelectorAll('li'); /* 类数组 */
+    const lis_arr = Array.from(lis);
+    const obj = {
+      0:1,
+      1:2,
+      2:3,
+      3:4,
+      length:3
+    }
+
+    // 类数组对象
+    // 1.有length属性
+    // 2.通过索引获取值
+    // es5:将传入的参数整理为数组的方式
+    function sum() {
+      // Array.from()从一个类数组中创建一个真数组
+      const args = Array.from(arguments);
+      return args.map(ele => ele*2)
+    }
+
+    sum(1, 2, 3, 4);
+
+    const arr = [2, 4, 6, 8];
+    const newArr = arr.map(x => x*2);
+
+    // console.log(newArr);
+
+    // rest参数 形式-- ...变量名
+    // 作用：获取函数的多余参数
+    // 搭配的变量是个数组
+    // Rest parameter must be last formal parameter -- ...variable需放在最后面
+    const arrow_sum = (a, ...args, d) => {
+      console.log(a);
+      console.log(args);
+    }
+    arrow_sum(1, 2, 3, 4);
+  </script>
+</body>
+</html>

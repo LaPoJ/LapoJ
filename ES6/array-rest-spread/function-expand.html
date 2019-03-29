@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+    function Person(name = 'zh') //ES6赋默认值的方法
+    {
+      //ES5赋默认值的方法
+      // this.name = name || 'zh';
+
+      this.name = name;
+    }
+
+
+    const p1 = new Person('csgo'); //{name: csgo}
+    const p2 = new Person(); //{name: 'defailt name}
+
+    console.log(p1.name);
+    console.log(p2.name);
+  </script>
+</body>
+</html>

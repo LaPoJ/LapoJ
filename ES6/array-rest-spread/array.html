@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 解构赋值
+    const arr = [18,19,30];
+    const [a, b, c] = arr;
+
+    // 解构赋值 --部分
+
+
+    // 对象解构
+    const obj ={
+      foo: 'foo val',
+      bar: 'bar val',
+      baz: 'baz val'
+    }
+    const {foo, baz} = obj;
+    // console.log(foo, baz);
+
+    const {foo:str1, bar} = obj
+    // console.log(str1, bar);
+
+    // 复杂对象的解构
+    const obj1 = {
+      p: ['hello', {msg: 'World'}]
+    }
+
+    const { p: [hello, world]} = obj1;
+    console.log(hello, world);
+  </script>
+</body>
+</html>

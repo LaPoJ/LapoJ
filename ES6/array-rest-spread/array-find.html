@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const ages = [{
+        name: '占煌1',
+        age: 10
+      },{
+        name: '占煌2',
+        age: 10
+      },{
+        name: '占煌3',
+        age: 10
+      },{
+        name: '占煌4',
+        age: 10
+      }
+    ];
+    // const this_age = ages.find((age) => age > 20);
+
+    const this_age_filter = ages.filter((element) => element.age > 18 );
+    const this_age_every = ages.every((element) => element.age > 18 );
+    const this_age_some = ages.some((element) => element.age > 18 );
+
+    console.log(this_age_every);
+    console.log(this_age_some);
+
+
+    // const this_age_index = ages.findIndex((age) => age > 20);
+
+    // console.log(this_age, this_age_index, this_age_filter);
+    // console.log(this_age_filter);
+  </script>
+</body>
+</html>
