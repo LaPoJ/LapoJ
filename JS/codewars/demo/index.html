@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Number</title>
+</head>
+<body>
+  <script>
+    // 加
+    Number.prototype.add = function(num) {
+      return this + num;
+    }
+    // 减
+    Number.prototype.reduce = function(num) {
+      return this - num;
+    }
+    // 乘
+    Number.prototype.multiply = function(num) {
+      return this * num;
+    }
+    // 除
+    Number.prototype.divide = function(num) {
+      return this/num;
+    }
+
+    var numberObj = new Number(5);
+    // console.log(numberObj.__proto__);
+    console.log(numberObj.add(5).multiply(2));
+    console.log((3).add(5).multiply(2));
+    // console.log(Number.prototype === numberObj.__proto__);
+  </script>
+</body>
+</html>
