@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1px</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .btn{
+      position: relative;
+      display: block;
+      line-height: 2.3;
+      font-size: 18px;
+      background-color: hotpink;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    .btn:after{
+      content:" ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      border:1px solid black;
+      box-sizing: border-box;
+      transform: scale(0.5);
+      transform-origin: 0 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 无法在页面中设置半个像素 -->
+  <a href="#" class="btn">按钮</a>
+</body>
+</html>
