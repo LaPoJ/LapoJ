@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mummy</title>
+  <script src="https://cdn.bootcss.com/phaser/2.6.2/phaser.min.js"></script>
+</head>
+
+<body>
+  <!-- 游戏挂载点 => 嵌入场景  canvas -->
+  <div id="game">
+
+  </div>
+  <script>
+    let width = 800
+    let height = 600
+    document.addEventListener('DOMContentLoaded', () => {
+      // phaser 2D游戏框架 一个游戏就是一个对象
+      // 像DOM 来写canvas
+
+      var game = new Phaser.Game(width, height,
+        Phaser.AUTO, // Phaser.AUTO => 游戏类型，最简单的一种
+        '#game', //添加地址
+        // 游戏业务规则
+        {
+          preload: preload,  // - 预加载图片等资源 preload
+          create: create,  // - 游戏的玩法  create => 加精灵，将地图
+          update: update  // 游戏动起来 update
+        })
+
+      function preload() {
+        game.load.image('lazur', './thorn_lazur.png')
+        game.load.spritesheet('mummy', './metalslug_mummy37x45.png', 37, 45, 18)
+        console.log('资源加载完成')
+      }
+
+      var back, mummy, anim, looText;
+
+      function create() {
+        back = game.add.image(0, -400, 'lazur')
+        back.scale.set(2)
+        back.smothed = false //滑动
+
+        mummy = game.add.sprite(200, 360, 'mummy', 18)
+        mummy.scale.set(4)
+        mummy.smoothed = false
+
+        // 动画也是一个对象
+        anim = mummy.animations.add('walk')
+        anim.onStart.add(animationStarted, this)
+        anim.onLoop.add(animationLooped, this)
+        anim.onComplete.add(animationStopped, this)
+        anim.play(10, true)
+      }
+
+      function update() {
+        if(anim.isPlaying){
+          back.x -= 1
+        }
+      }
+
+      function animationStarted(sprite, animation) {
+        game.add.text(32, 32, 'AnimationStarted', { fill: 'white' })
+      }
+      function animationLooped(sprite, animation) {
+        if (animation.loopCount === 1) {
+          loopText = game.add.text(32, 64, 'AnimationLooped', { fill: 'white' })
+        }
+        else {
+          loopText = game.add.text(32, 64, 'AnimationLooped x2', { fill: 'white' })
+          animation.loop = false;
+        }
+      }
+      function animationStopped(sprite, animation) {
+
+        game.add.text(32, 64+32, 'Animation stopped', { fill: 'white' });
+      }
+    })
+  </script>
+</body>
+
+</html>
