@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var xhr = null;
+    if (window.XMLHttpRequest) {
+      xhr = new XMLHttpRequest();
+    }else{
+      xhr = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+
+    // true和false是为了设置请求是否为异步，false为同步
+    xhr.open("GET","./mock.json", true);
+    console.log(xhr.readyState);
+
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+
+    // 将web请求发送到web服务器
+    xhr.send()
+
+    // console.log(xhr.responseText);
+    // console.log(xhr.readyState, xhr.status);
+
+    xhr.onreadystatechange = function () {
+      if(this.readyState !== 4) return
+      console.log(this.responseText);
+    }
+    console.log(666);
+  </script>
+</body>
+</html>
