@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- .then 解决异步问题 -->
+  <script>
+   /*  const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts')
+    // console.log(postsPromise)
+
+    postsPromise.then(data => data.json()).then(data => console.log(data)) */
+
+    const posts = [
+      { title: 'I Love JavaScriot', author: 'Wes Bos', id: 1 },
+      { title: 'CSS', author: 'Chris Coyier', id: 2 },
+      { title: 'Dev Toll', author: 'Addy Osmani', id: 3 },
+      { title: 'Coding Dream', author: 'Team Lv Meng', id: 4 },
+    ];
+
+    const authors = [
+      { name: 'Wes Bos', twitter: '@wesbos', bio: 'Canadian Developer' },
+      { name: 'Chris Coyier', twitter: '@chriscoyier', bio: 'CSS Tricks and CodePen' },
+      { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
+      { name: 'Team Lv Meng', twitter: '@teamLvmeng', bio: 'LvMeng coding' },
+    ];
+
+    function getPostById(id) {
+      return new Promise((resolve, reject) => {
+        // find the post
+        setTimeout(() => {
+          const post = posts.find(post => post.id === id)
+          // console.log(post)
+          if (post) {
+            resolve(post)
+          }else{
+            reject(Error('Post is not found!'))
+          }
+        }, 200);
+      })
+    }
+
+    /* function hydrateAuthor(post) {
+      return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+          const authorDeatails = authors.find(author => author.name===post.author);
+          if(authorDeatails){
+              post.author = authorDeatails;
+              resolve(post);
+          }
+          else{
+              reject('找不到作者')
+          }
+      },200)
+      })
+    }
+    getPostById(2).then(post => {
+      return hydrateAuthor(post)
+    }).then(author => {
+      console.log(author);
+    }).catch(err => console.log(err)) */
+
+    getPostById(5).then(function(result) {
+      const author = authors.find( author => author.name === result.author)
+      console.log(author);
+    }).catch(function(response) {
+      console.log(response);
+    })
+  </script>
+</body>
+</html>
