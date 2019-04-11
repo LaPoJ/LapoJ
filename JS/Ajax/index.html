@@ -16,22 +16,50 @@
     }
 
     // true和false是为了设置请求是否为异步，false为同步
-    xhr.open("GET","./mock.json", true);
-    console.log(xhr.readyState);
-
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+    xhr.open("get","./mock.json", true);
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 
     // 将web请求发送到web服务器
     xhr.send()
 
-    // console.log(xhr.responseText);
     // console.log(xhr.readyState, xhr.status);
+    var p = new Promise((resolve, reject ) => {
+      xhr.onreadystatechange = function () {
+        if(this.readyState === 4) {
+          console.log(xhr.responseText);
+          resolve(xhr.responseText);
+        }
+      }
+    });
 
-    xhr.onreadystatechange = function () {
-      if(this.readyState !== 4) return
-      console.log(this.responseText);
+
+
+    function MGxq() {
+      return new Promise((resolve, reject) => {
+        console.log('猛哥相亲了！');
+        resolve('相亲很顺利');
+      })
     }
-    console.log(666);
+
+    function MGMarry() {
+      // setTimeout(() => {
+      //   console.log('猛哥结婚了');
+      // }, 500);
+      return new Promise((resolve, reject) => {
+        console.log('猛哥结婚了！');
+        resolve('相亲很顺利');
+      })
+    }
+
+    // p.then(MGxq).then(MGMarry).catch(() => {
+    //   console.log('猛哥出家了');
+    // });
+
+    Promise.all([p, MGxq(), MGMarry()]).then((value) => {
+      console.log(value);
+    }).catch( (err) => {
+        console.log(err)
+      });
   </script>
 </body>
 </html>
