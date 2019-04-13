@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // listener 收听者 发布者
+    // 注册时间 事件回调函数
+    // document.body.addEventListener('click', function() {
+    //     alert('111')
+    // });
+    // document.body.addEventListener('click', function() {
+    //     alert('121')
+    // });
+    // document.body.addEventListener('click', function() {
+    //     alert('131')
+    // });
+
+    let yq = {
+      name: 'zh',
+      yz: 99 } //发布者
+
+    yq.peoplelist = [];
+    // 先形成他们之间的关系  订阅者？
+
+    yq.listen = function(fn) {
+      this.peoplelist.push(fn);   
+    }
+    yq.trigger = function() {
+      for (let i = 0, fn; fn = this.peoplelist[i++];) {
+
+        fn.call(this, '今晚有空，可以去看复仇者联盟4');
+      }
+    }
+
+    yq.listen(function(msg) {
+      console.log(`想听${this.name} ${msg}唱歌`);
+    })
+    yq.listen(function(msg) {
+      console.log(`想看${this.name} ${msg}跳舞`);
+    })
+    yq.listen(function(msg) {
+      console.log(`想${this.name} ${msg}。。。`);
+    })
+    setTimeout(() => {
+      yq.trigger()
+    }, 1000);
+
+  </script>
+</body>
+</html>
