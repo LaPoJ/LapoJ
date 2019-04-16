@@ -14,6 +14,12 @@ a
 .action-list
   padding-left 0.4rem
 
+// .lnr-pointer-up{
+//   color: #0F52BA;
+//   font-family: sans-serif;
+//   font-size: 12px;
+// }
+
 .nav
   height 1.067rem
   font-size 18px
@@ -252,6 +258,85 @@ a
           height 1.867rem
         &:last-child
           margin-right 0
+  .pos_r
+    position relative
+    .join-comment
+      position absolute
+      font-size 14px
+      background-color #e54847
+      color $font_color_white
+      padding 0.1rem 0.3rem
+      border-radius 20px
+      top 50%
+      right 0
+      transform: translateY(-50%)
+  .movie-comment
+    padding 0.2rem 0 0.4rem 0
+    overflow hidden
+    .comment-item
+      float left
+      border 1px solid #aaaaaa
+      border-radius 20px
+      padding 0.1rem 0.25rem
+      margin-top 0.2rem
+      margin-right 0.3rem
+      .commit-item__sort
+        font-size 0
+        span
+          font-size 14px
+  .section-seperate
+    .chosen-comment
+      .chosen-comment__item
+        .item-avatal
+          float left
+          width 1rem
+          height 1rem
+          border-radius 50%
+          overflow hidden
+          img
+            width 100%
+            height 100%
+        .item-detail
+          overflow hidden
+          padding-left .3rem
+          padding-bottom 0.4rem
+          border-bottom 1px solid #eee
+          margin-bottom 0.4rem
+          .item-detail__hd
+            div
+              span
+                vertical-align middle
+            .lever
+              display inline-block
+              width .9735rem
+              height 0.4534rem
+              img
+                width 100%
+            .item-score__desc
+              color #9b9b9b
+              font-size 12px
+          .item-detail__content
+            margin .15rem 0
+          .item-detail__footer
+            margin-top .4rem
+            .item-detail__time
+              color #9b9b9b
+            .pull-right
+              float right
+              .link
+                color #757575
+                border 1px solid #eee
+                margin-left 0.3rem
+                padding .12rem 0.3rem .16rem
+                box-sizing border-box
+                border-radius 20px
+                .icon
+                  display inline-block
+                  width 15px
+                  height 15px
+                  vertical-align middle
+                span
+                  vertical-align middle
 #toast
   display none
 
