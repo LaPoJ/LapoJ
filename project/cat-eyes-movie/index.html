@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
   <link href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
@@ -87,8 +88,8 @@
         </div>
       </div>
     </section>
-     <!-- section3 -->
-     <!-- 演员表 -->
+    <!-- section3 -->
+    <!-- 演员表 -->
     <section class="section-seperate">
       <p class="action-list section-til">演职人员</p>
       <ul class="movie-celebrities">
@@ -103,8 +104,8 @@
       </ul>
     </section>
 
-     <!-- section4 -->
-     <!-- 票房 -->
+    <!-- section4 -->
+    <!-- 票房 -->
     <section class="section-seperate section-expander movie-booking">
       <p class="section-til">票房</p>
       <div class="weui-flex">
@@ -143,6 +144,100 @@
         </li> -->
       </ul>
     </section>
+
+    <!-- section6 -->
+    <!-- 讨论 -->
+    <section class="section-seperate section-expander">
+      <!-- title -->
+      <p class="section-til pos_r">讨论
+        <span class="join-comment">参与讨论</span>
+      </p>
+
+      <ul class="movie-comment">
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>全部</span>
+            <span class="comment-item__num"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>好评</span>
+            <span class="comment-item__num good"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>差评</span>
+            <span class="comment-item__num bad"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>点映</span>
+            <span class="comment-item__num dy"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>购票</span>
+            <span class="comment-item__num bought"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>认证作者</span>
+            <span class="comment-item__num author"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item__sort">
+            <span>同城</span>
+            <span class="comment-item__num sameCity"></span>
+          </div>
+          </li>
+      </ul>
+    </section>
+
+<!-- section7 -->
+    <section class="section-seperate section-expander">
+      <p class="section-til jingxuan">精选</p>
+      <ul class="chosen-comment" id="chosen-comment">
+        <!-- <li class="chosen-comment__item">
+          <div class="item-avatal">
+            <img src="" alt="头像">
+          </div>
+          <div class="item-detail">
+            <div class="item-detail__hd">
+              <div>
+                <span class="nick-name">用户名称</span>
+                <span class="lever">
+                  <img src="" alt="等级图标">
+                </span>
+              </div>
+              <p class="item-score__desc">给这部电影打了<span></span>分</p>
+            </div>
+            <div class="item-detail__content">
+              <p>评论内容</p>
+            </div>
+            <div class="item-detail__footer">
+              <span class="item-detail__time">发布时间</span>
+              <div class="pull-right">
+                <a href="#" class="link comment-like">
+                  <i class="icon icon-approve "></i>
+                  <span>喜欢的人数</span>
+                </a>
+                <a href="#" class="link comment-reply">
+                  <i class="icon icon-comment"></i>
+                  <span>不喜欢的人数</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+
     <!-- toast -->
     <div id="toast">
       <div class="weui-mask_transparent"></div>
@@ -152,13 +247,15 @@
       </div>
     </div>
   </div>
+
+
   <script>
     (function () {
       $.ajax({
-        url: 'https://www.easy-mock.com/mock/5ca2c29464930718b239eb94/lm/lvmeng/myMovie-demo',
+        url: 'https://easy-mock.com/mock/5ca4595bc4e9a575b66b62fc/lapjc/DemoApi/lapjc/cat-eyes-movie',
         type: 'get',
         success: function (res) {
-          console.log(res)
+          // console.log(res)
           // $('#moviePic').attr('src', res.data.moviePic)
           $('.movie-content .movie-name span').html(res.data.name)
           $('.movie-content .movie-ename span').html(res.data.nameEnglish)
@@ -173,6 +270,8 @@
           celebritity(res.data.person)
           addBooking(res.data.booking)
           addPhoto(res.data.pictures)
+          addPeopleNum(res.data.commentNum)
+          addLeavingMessage(res.data.comment)
         }
       })
 
@@ -264,6 +363,53 @@
         }
       }
 
+      function addPeopleNum(commentNum) {
+        $('.good').html(commentNum.good)
+        $('.bad').html(commentNum.bad)
+        $('.dy').html(commentNum.dy)
+        $('.bought').html(commentNum.bought)
+        $('.author').html(commentNum.author)
+        $('.sameCity').html(commentNum.sameCity)
+      }
+
+      function addLeavingMessage(comment) {
+        for (let i = 0; i < comment.length; i++) {
+          $('#chosen-comment').append(`
+            <li class="chosen-comment__item">
+              <div class="item-avatal">
+                <img src="${comment[i].avatal}" alt="">
+              </div>
+              <div class="item-detail">
+                <div class="item-detail__hd">
+                  <div>
+                    <span class="nick-name">${comment[i].nickName}</span>
+                    <span class="lever">
+                      <img src="${comment[i].lever}" alt="">
+                    </span>
+                  </div>
+                  <p class="item-score__desc">给这部电影打了<span>${comment[i].grade}</span>分</p>
+                </div>
+                <div class="item-detail__content">
+                  <p>${comment[i].detail}</p>
+                </div>
+                <div class="item-detail__footer">
+                  <span class="item-detail__time">${comment[i].date}</span>
+                  <div class="pull-right">
+                    <a href="#" class="link comment-like">
+                      <i class="icon icon-approve lnr lnr-pointer-up"></i>
+                      <span>${comment[i].like}</span>
+                    </a>
+                    <a href="#" class="link comment-reply">
+                      <i class="icon icon-comment lnr lnr-pointer-down"></i>
+                      <span>${comment[i].reply}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          `)
+        }
+      }
     })()
   </script>
 </body>
