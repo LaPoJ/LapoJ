@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>硬件设备</title>
+</head>
+<body>
+  <!-- 等getUserMeida -->
+  <video src="" id="video" autoplay></video>
+  <canvas id="canvas"></canvas>
+  <div class="btn-container">
+    <button id="photo" class="btn">
+      拍照
+    </button>
+  </div>
+  <script>
+    const videoConstraints = {
+      width:1366,
+      height: 768
+    }
+    const videoNode = document.querySelector('#video');
+    const canvas  = document.getElementById('canvas');
+    canvas.width = videoConstraints.width;
+    canvas.height = videoConstraints.height;
+    const context = canvas.getContext('2d');
+
+    navigator.getUserMedia(
+      { audio: true,  video: videoConstraints },
+      function(stream) {
+        videoNode.srcObject = stream;
+      },function(err) {
+        err;
+      }
+    );
+
+    document.querySelector('#photo').addEventListener('click',function(event) {
+      event.preventDefault();
+      // 拍屏
+      // stream canvas 画布
+      context.drawImage(videoNode, 0, 0, canvas.width, canvas.height);
+      // 把图片保存本地
+      download(canvas.toDataURL('./image/jpeg'));
+    })
+    function download(src) {
+      const a = document.createElement('a');
+      a.setAttribute('download', new Date())
+      a.href = src;
+      a.click();
+    }
+  </script>
+</body>
+</html>
