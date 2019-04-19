@@ -40,16 +40,12 @@
     <input type="button" class="btn btn-primary" name="fileSelectBtn" value="上传文件">
   </form>
   <script>
-    const uploadForm = document
-      .forms['upload']['fileSelect']
-    const fileSelectBtn = document
-      .forms['upload']['fileSelectBtn'];
-    const listGroup = document
-      .querySelector('.list-group');
+    const uploadForm = document.forms['upload']['fileSelect']
+    const fileSelectBtn = document.forms['upload']['fileSelectBtn'];
+    const listGroup = document.querySelector('.list-group');
     function displayFileInfo(event) {
       event.preventDefault();
-      const files = event.target.files
-        || event.dataTransfer.files;
+      const files = event.target.files || event.dataTransfer.files;
       for (let file of files) {
         const liNode = document.createElement('li');
         // liNode.className = ''
@@ -77,8 +73,7 @@
 
       }
     }
-    uploadForm.addEventListener('change',
-      displayFileInfo);
+    uploadForm.addEventListener('change', displayFileInfo);
     fileSelectBtn.addEventListener('click', function () {
       uploadForm.click();
     })
