@@ -34,3 +34,23 @@
       margin auto
       height 100%
       object-fit cover
+@media only screen and (max-width: 767px)
+  .ui.hero
+    .item
+      display flex!important
+      flex-direction column
+      align-items center
+      text-align center
+      .content
+        height auto
+        color #000
+        align-items center
+        justify-content center
+        order 2
+      img
+        position inherit
+        height auto
+        order 1
+    .header
+      font-size 36px
+      letter-spacing 4px
