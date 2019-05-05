@@ -14,7 +14,7 @@ module.exports = {
   mode: 'development', // development   production
   // 在 webpack 4.x 中，有一个很大的特性，就是 约定大于配置  约定，默认的打包入口路径是 src -> index.js
 
-  entry: './src/index.js',
+  // entry: './src/index.js',
 
   // output: {
   //   filename: 'bundle.js',
@@ -43,8 +43,14 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    // 后缀名可省略
+    extensions: ['.js', '.jsx', 'json'],
+    alias: { //表示别名
+      '@': path.join(__dirname, './src') //这样， @ 就表示项目根目录中 src 的中一层路径
+    }
   }
-
 }
 
 
