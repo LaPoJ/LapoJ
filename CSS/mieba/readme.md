@@ -22,3 +22,32 @@
       }
     })
   ```
+
+- 解决随机消失英雄
+  ```javascript
+    Math.random() 0~1 <0.5
+  ```
+  组件
+  ```javascript
+     Vue.component("Heroes", {
+      props: {
+        //参数: 参数约束
+        heroes: {
+          type: Array,
+          default: function () {
+            return []
+          }
+        }
+      },+++++++++++++++++++++++++
+
+      //模板
+      template: ``
+
+     //组件化思维
+     <Heroes :heroes="heroes" />
+  ```
+- 小程序之中 src={{item.src}}
+  vue :src="itme.src"
+    props
+    ref="allAudio"  this.$ref.allAudio
+    wx:for  v-for
