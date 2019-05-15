@@ -48,7 +48,7 @@ module.exports = {
     // 后缀名可省略
     extensions: ['.js', '.jsx', 'json'],
     alias: { //表示别名
-      '@': path.join(__dirname, './src') //这样， @ 就表示项目根目录中 src 的中一层路径
+      '@': path.join(__dirname, './src') //这样， @ 就表示项目根目录中 src 的中这一层路径
     }
   }
 }
