@@ -28,25 +28,37 @@ module.exports = {
     rules: [
       {
         test: /\.js|jsx$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: 'babel-loader'
         }
-      },
-      {
+      }, {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },{
         test: /\.html$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [
-          {
+        exclude: /(node_modules)/,
+        use:{
             loader: "html-loader"
-          }
-        ]
+        }
+      }, {
+        test: /\.ttf|woff|woff2|eot|svg$/ ,
+        // exclude: /(node_modules)/,
+        use: {
+          loader:"url-loader"
+        }
+      }, {
+        test: /\.scss$/,
+        // exclude: /(node_modules)/,
+        use:
+          ["style-loader", "css-loader?modules&localIdentName=[name]-[local]-[hash:5]", "sass-loader"]
+
       }
     ]
   },
   resolve: {
     // 后缀名可省略
-    extensions: ['.js', '.jsx', 'json'],
+    extensions: ['.js', '.jsx', 'json', '.scss'],
     alias: { //表示别名
       '@': path.join(__dirname, './src') //这样， @ 就表示项目根目录中 src 的中这一层路径
     }
