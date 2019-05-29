@@ -6,7 +6,7 @@
       background-color="#eeeeee"
       router
     >
-      <el-menu-item index="/main">
+      <el-menu-item index="/index">
         <i class="el-icon-menu"></i>
         <span slot="title">首页</span>
       </el-menu-item>
@@ -17,7 +17,7 @@
           <span>用户管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">
+          <el-menu-item index="index/main-list">
             <i class="el-icon-user-solid"></i>用户列表
           </el-menu-item>
           <el-menu-item index="2-2">
@@ -33,7 +33,9 @@
 export default {
   naem: 'Sidebar',
   data () {
-    return
+    return {
+
+    }
   }
 }
 </script>
