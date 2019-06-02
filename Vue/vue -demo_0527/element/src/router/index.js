@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import Index from '@/components/Main'
 import MainDetail from '@/components/MainDetail'
 import UserList from '@/components/UserList'
+import UsersInfo from '@/components/UsersInfo'
 
 Vue.use(Router)
 
@@ -26,14 +27,19 @@ export default new Router({
       component: Index,
       children: [
         {
-          path: '/',
+          path: '/index',
           name: MainDetail,
           component: MainDetail
         },
         {
-          path: '/index/main-list',
+          path: '/index/usersList',
           name: UserList,
           component: UserList
+        },
+        {
+          path: '/index/usersInfo',
+          name: UsersInfo,
+          component: UsersInfo
         }
       ]
     }
