@@ -8,7 +8,7 @@
           <i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="setting">设置</el-dropdown-item>
+          <el-dropdown-item command="setting">设置密码</el-dropdown-item>
           <el-dropdown-item command="loginout">退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -34,6 +34,28 @@ export default {
       if (command === 'loginout') {
         localStorage.removeItem('userName')
         this.$router.push('./')
+      }
+      if(command === 'setting'){
+        const userName = localStorage.getItem('userName')
+        this.$prompt('请输入新密码：有字母和数字组成，至少6位数', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          inputPattern: /^[a-zA-Z0-9]{6,21}$/,
+          inputErrorMessage: '密码格式不正确'
+        }).then(({ value }) => {
+          this.$message({
+            type: 'success',
+            message: '密码更新成功!'
+          })
+          localStorage.setItem('userName', userName)
+          localStorage.setItem('password', value)
+          this.$router.push('/')
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消输入'
+          })
+        })
       }
     }
   }
