@@ -11,16 +11,16 @@
         <span slot="title">首页</span>
       </el-menu-item>
 
-      <el-submenu index="2">
+      <el-submenu index="">
         <template slot="title">
           <i class="el-icon-setting"></i>
           <span>用户管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="index/main-list">
+          <el-menu-item index="/index/usersList">
             <i class="el-icon-user-solid"></i>用户列表
           </el-menu-item>
-          <el-menu-item index="2-2">
+          <el-menu-item index="/index/usersInfo">
             <i class="el-icon-s-unfold"></i>用户信息
           </el-menu-item>
         </el-menu-item-group>
