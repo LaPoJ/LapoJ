@@ -89,7 +89,7 @@
   "workbench.statusBar.feedback.visible": false,
 
   // 隐藏 tab 栏文件名左侧的文件类型图标
-  // "workbench.editor.showIcons": false,
+  "workbench.editor.showIcons": false,
 
   // 使用 ctrl 或 command 多选
   "editor.multiCursorModifier": "ctrlCmd",
