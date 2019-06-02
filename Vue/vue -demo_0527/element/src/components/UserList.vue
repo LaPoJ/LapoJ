@@ -9,13 +9,15 @@
           @change='handleChange'>
         </el-cascader>
       </div>
-      <div class='block'>
-        <span class='demonstration'>时间</span>
-        <el-cascader
-          :options='options'
-          v-model='selectedOptions'
-          @change='handleChange'>
-        </el-cascader>
+      <div class="block">
+        <span class="demonstration">时间</span>
+        <el-date-picker
+          v-model="value1"
+          type="datetimerange"
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期">
+        </el-date-picker>
       </div>
     </div>
   </div>
@@ -27,7 +29,8 @@ export default {
   name: 'UserList',
   data () {
     return {
-      options: areajson
+      options: areajson,
+      value1: ''
     }
   }
 }
@@ -43,16 +46,11 @@ export default {
 }
 .list-title{
   height: 100px;
-
   line-height: 100px;
+  box-shadow: 0 0 20px #cac6c6;
 }
 .block{
   float: left;
-  width: 500px;
-  margin: 10px;
-  background-color: red;
-}
-.demonstration{
-
+  margin-left: 35px;
 }
 </style>
