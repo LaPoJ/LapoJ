@@ -3,6 +3,8 @@ adams
 .jshintrc
 .eslintrc
 
+yarn.lock
+
 
 # Logs
 logs
