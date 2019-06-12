@@ -67,7 +67,7 @@ async function writeHref() {
     allHrefs.push(hrefArr)
     sleep(5000)
   }
-  fs.writeFile('hrefs.json', JSON.stringify(allHrefs), (err) => {
+  fs.writeFile('JDhrefs.json', JSON.stringify(allHrefs), (err) => {
 
   })
 }
