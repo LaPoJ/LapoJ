@@ -82,7 +82,7 @@ export default {
     }
   },
   created () {
-    console.log(this.seller)
+    // console.log(this.seller)
     this.classMap = ['decrease', 'discount', 'guarantee', 'invoice', 'special']
   },
   methods: {
@@ -112,7 +112,6 @@ export default {
         vertical-align top
         img
           border-radius 2px
-
       .content
         display inline-block
         margin-left 16px
@@ -144,19 +143,14 @@ export default {
             margin-right 4px
             background-size 12px 12px
             background-repeat no-repeat
-
             &.decrease
               bg-image('decrease_1')
-
             &.discount
               bg-image('discount_1')
-
             &.guarantee
               bg-image('guarantee_1')
-
             &.invoice
               bg-image('invoice_1')
-
             &.special
               bg-image('special_1')
           .text
@@ -179,7 +173,6 @@ export default {
           margin-left 2px
           line-height 24px
           font-size 10px
-
     .bulletin-wrapper
       position relative
       height 28px
@@ -207,7 +200,6 @@ export default {
         font-size 10px
         right 12px
         top 8px
-
     .background
       position absolute
       top 0
@@ -231,12 +223,10 @@ export default {
       &.fade-enter-active,
       &.fade-leave-active
         transition all 0.5s
-
       &.fade-enter,
       &.fade-leave-active
         opacity 0
         background rgba(7, 17, 27, 0)
-
       .detail-wrapper
         width 100%
         min-height 100%
@@ -282,22 +272,16 @@ export default {
                 margin-right 6px
                 background-size 16px 16px
                 background-repeat no-repeat
-
                 &.decrease
                   bg-image('decrease_2')
-
                 &.discount
                   bg-image('discount_2')
-
                 &.guarantee
                   bg-image('guarantee_2')
-
                 &.invoice
                   bg-image('invoice_2')
-
                 &.special
                   bg-image('special_2')
-
               .text
                 font-size 12px
                 line-height 16px
