@@ -1,10 +1,10 @@
 import React from 'react'
 
-import CmtItem from '@/components/CmtItem'
+import CmtItem1 from '@/components/CmtItem1'
 
 const styleApp = { color: 'red', fontSize: '45px', fontWeight: 200, textAlign: 'center' }
 
-export default class CmtList extends React.Component{
+export default class CmtList1 extends React.Component{
   constructor(){
     super();
     this.state = {
@@ -22,8 +22,8 @@ export default class CmtList extends React.Component{
   render(){
     return <div>
       <h1 style={styleApp}>评论列表</h1>
-      {this.state.CommentList.map( item => <CmtItem {...item} key={item.id}></CmtItem>)}
+      {this.state.CommentList.map( item => <CmtItem1 {...item} key={item.id}></CmtItem1>)}
     </div>
-    
+
   }
 }
