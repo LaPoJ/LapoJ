@@ -1,0 +1,16 @@
+module.exports = [
+  {
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+      reply('hello hapi')
+    },
+    config: {
+      // 登录检验
+      // swagger API文档
+      tags: ['api', 'tests'],
+      description: '测试hello-api',
+    }
+
+  }
+]
