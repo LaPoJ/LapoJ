@@ -2,7 +2,7 @@ import React from 'react'
 import WithLogin from './WithLogin'
 
 @WithLogin
-export default class ShopCart extends React.Component{
+class ShopCart extends React.Component{
 
   render () {
     const { a, b } = this.props
@@ -18,3 +18,4 @@ export default class ShopCart extends React.Component{
 }
 
 ShopCart.displayName = 'ShopCart'
+export default ShopCart
