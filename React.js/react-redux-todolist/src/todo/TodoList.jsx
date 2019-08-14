@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 class TodoList extends Component {
   state = {  }
+
   render() {
+
     const { todos, toggleTo } = this.props;
     return (
       <div>
@@ -24,11 +26,13 @@ class TodoList extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     todos: state.todos
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleTo: id => dispatch({
@@ -37,4 +41,5 @@ const mapDispatchToProps = (dispatch) => {
     })
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList)

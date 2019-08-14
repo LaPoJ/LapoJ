@@ -26,7 +26,7 @@ class AddTo extends React.Component{
             })
           }
         }}>
-          <input type="text" ref={ node => this.inputNode = node }/>
+          <input type="textn" ref={ node => this.inputNode = node }/>
           <button type="submit">AddToDo</button>
         </form>
 
@@ -36,7 +36,7 @@ class AddTo extends React.Component{
 }
 
 //#regin
-  // mapStateToProps -> 将状态映射为 props
+  // mapStateToProps ->  props将状态映射为
   // mapDispatchToProps -> 将dispatch 映射为 props
   // export default connect( (state) => {
   //   console.log('connect: -> state', state)
