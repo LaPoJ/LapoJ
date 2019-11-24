@@ -29,6 +29,7 @@ export default {
   name: 'UserList',
   data () {
     return {
+      /* eslint-disable no-undef */
       options: areajson,
       value1: ''
     }
