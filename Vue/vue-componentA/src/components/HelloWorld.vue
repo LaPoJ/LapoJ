@@ -8,7 +8,7 @@
 
 <script>
 import Button from './com/button'
-import Menu from './com/menu';
+import Menu from './com/menu'
 export default {
   name: 'HelloWorld',
   data () {
