@@ -30,7 +30,7 @@ export default {
       passErr: ''
     }
   },
-  mounted() {
+  mounted () {
     localStorage.setItem('userName', 'admin')
     localStorage.setItem('password', '123456')
   },
