@@ -35,9 +35,9 @@ export default {
         localStorage.removeItem('userName')
         this.$router.push('./')
       }
-      if(command === 'setting'){
+      if (command === 'setting') {
         const userName = localStorage.getItem('userName')
-        this.$prompt('请输入新密码：有字母和数字组成，至少6位数', '提示', {
+        this.$prompt('请输入新密码：由字母和数字组成，至少6位数', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           inputPattern: /^[a-zA-Z0-9]{6,21}$/,
