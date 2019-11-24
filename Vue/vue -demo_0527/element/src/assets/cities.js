@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 areajson = [
   {
     value: '110000',
