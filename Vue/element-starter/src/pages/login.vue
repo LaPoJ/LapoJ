@@ -7,14 +7,8 @@
         </div>
         <el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
           <el-form-item>
-            <span class="fa-tips">
-              <i class="fa fa-user"></i>
-            </span>
-            <el-input class="area"
-              type="text"
-              placeholder="用户名"
-              v-model="loginForm.username">
-            </el-input>
+            <span class="fa-tips"><i class="fa fa-user"></i></span>
+            <el-input class="area" type="text" placeholder="用户名" v-model="loginForm.username"> </el-input>
           </el-form-item>
         </el-form>
       </section>
