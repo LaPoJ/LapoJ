@@ -9,8 +9,7 @@ export default function App() {
   return (
     <div>
       <Router>
-        <Route path="/" component={ PageLayout } >
-        </Route>
+        <Route path="/" component={ PageLayout } ></Route>
       </Router>
     </div>
   )

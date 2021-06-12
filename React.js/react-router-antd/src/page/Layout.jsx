@@ -72,7 +72,6 @@ export default class PageLayout extends React.Component{
             </Menu>
           </Sider>
           <Content style={{marginLeft: '5%'}}>
-            {/* { this.props.children } */}
             <Route path="/table" component={ Table }/>
             <Route path="/lable" component={ Lable }/>
             <Route path="/post/:id" component={ Post } />
